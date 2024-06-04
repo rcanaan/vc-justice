@@ -6,7 +6,7 @@ import { FaLock } from "react-icons/fa";
 const Header: React.FC = () => {
   return (
     <header
-      className="bg-gray-800 text-white p-4 flex justify-between items-center"
+      className="bg-gray-800 text-white p-4 flex sticky  justify-between items-center"
       style={{ marginRight: "12rem" }}
     >
       <div className="flex items-center space-x-4 w-1/3">
