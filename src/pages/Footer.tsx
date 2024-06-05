@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import VideocamIcon from "@mui/icons-material/Videocam";
+import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
+import PresentToAllOutlinedIcon from "@mui/icons-material/PresentToAllOutlined";
 export default function Footer() {
   const [meetingTime, setMeetingTime] = useState(0);
 
@@ -23,13 +25,24 @@ export default function Footer() {
         style={{ marginRight: "12rem" }}
       >
         <div className="flex items-center space-x-2 w-1/3">
-          <button className="bg-red-600 px-4 py-2 rounded">LIVE</button>
-          <span>Meeting Time: {formatTime(meetingTime)}</span>
+          <button className="bg-red-400 px-4 py-2 rounded font-semibold">
+            LIVE
+          </button>
+          <span> {formatTime(meetingTime)}</span>
         </div>
-        <div className="flex items-center space-x-4  w-1/3">
-          <button className="bg-gray-700 px-4 py-2 rounded">Share</button>
-          <button className="bg-gray-700 px-4 py-2 rounded">Microphone</button>
-          <button className="bg-gray-700 px-4 py-2 rounded">Camera</button>
+        <div className="flex items-center justify-center space-x-4 w-1/3">
+          <button className="bg-gray-700 px-4 py-2 rounded-3xl flex space-x-2 justify-center">
+            <span>שיתוף</span>
+            <PresentToAllOutlinedIcon />
+          </button>
+          <button className="bg-gray-700 px-4 py-2 rounded-3xl flex space-x-2 justify-center">
+            <span>מיקרופון</span>
+            <KeyboardVoiceIcon />
+          </button>
+          <button className="bg-gray-700 px-4 py-2  justify-center rounded-3xl flex space-x-2">
+            <span>מצלמה</span>
+            <VideocamIcon />
+          </button>
         </div>
       </footer>
       );
