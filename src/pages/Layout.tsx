@@ -6,12 +6,15 @@ import NavBar from "./SideBar";
 
 const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-gray-800">
       <Header />
-      <div className="flex flex-grow" style={{ marginBottom: "4rem" }}>
+      <div
+        className="flex flex-grow bg-gray-800"
+        style={{ marginBottom: "4rem" }}
+      >
         <main
-          className="flex-grow bg-gray-100 p-4"
-          style={{ marginRight: "12rem" }}
+          className="flex-grow bg-gray-800 p-4"
+          style={{ marginRight: "8rem lg:10rem " }}
         >
           <Outlet />
         </main>

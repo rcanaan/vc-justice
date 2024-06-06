@@ -2,11 +2,24 @@ import React from "react";
 import Participant from "./Participant";
 
 const participants = [
-  { name: "Judge 1", role: "judge", imgSrc: "path/to/image1.jpg" },
-  { name: "Lawyer 1", role: "lawyer", imgSrc: "path/to/image2.jpg" },
-  { name: "Lawyer 2", role: "lawyer", imgSrc: "path/to/image3.jpg" },
-  { name: "Lawyer 3", role: "lawyer", imgSrc: "path/to/image2.jpg" },
-  { name: "Lawyer 4", role: "lawyer", imgSrc: "path/to/image3.jpg" },
+  {
+    name: "כבוד השופטת ישראלה ישראלוף",
+    role: "judge",
+    part: "ועדת ערר לענייני קורונה",
+    imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
+  },
+  {
+    name: "שושנה שושני",
+    role: "lawyer",
+    part: "צד משיב",
+    imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
+  },
+  {
+    name: "קובי יעקובי",
+    role: "lawyer",
+    part: "צד עורך",
+    imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
+  },
 ];
 
 const VideoGrid: React.FC = () => {
@@ -17,23 +30,26 @@ const VideoGrid: React.FC = () => {
     (participant) => participant.role !== "judge"
   );
   return (
-    <div className="p-4">
+    <div className="">
       {judge && (
-        <div className="mb-4 flex justify-center">
+        <div className="flex justify-center mb-[0.75rem]">
           <Participant
             key={judge.name}
             name={judge.name}
             role={judge.role}
+            part={judge.part}
             imgSrc={judge.imgSrc}
           />
         </div>
       )}
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-wrap gap-x-[0.75rem] gap-y-[0.75rem] xl:gap-y-[0.75rem] justify-center ">
+        {/* <div className="flex flex-wrap gap-x-[0.75rem] gap-y-[4.75rem] justify-center mt-16"> */}
         {otherParticipants.map((participant, index) => (
           <Participant
             key={index}
             name={participant.name}
             role={participant.role}
+            part={participant.part}
             imgSrc={participant.imgSrc}
           />
         ))}
