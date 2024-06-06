@@ -18,7 +18,7 @@ const Participant: React.FC<ParticipantProps> = ({
 }) => {
   return (
     <div
-      className={`relative flex flex-col items-center h-56 lg:min-h-64   ${
+      className={`relative flex flex-col items-center h-56 lg:min-h-64  ${
         !isJudge
           ? "w-[18rem] lg:min-w-[25.5rem] xl:min-w-[29rem] 2xl:min-w-[40rem] 2xl:min-h-96"
           : " w-full"
@@ -27,10 +27,10 @@ const Participant: React.FC<ParticipantProps> = ({
       <img
         src={imgSrc}
         alt={name}
-        className=" h-56 lg:min-h-64 lg:min-w-[25.5rem] xl:min-w-[29rem] 2xl:min-w-[40rem] 2xl:min-h-96 object-cover rounded-lg"
+        className="h-56 lg:min-h-64 lg:min-w-[25.5rem] xl:min-w-[29rem] 2xl:min-w-[40rem] 2xl:min-h-96 object-cover rounded-lg"
       />
       <div
-        className={` absolute top-2.5 right-2.5 rounded-md ${
+        className={`absolute top-2.5 right-2.5 rounded-md ${
           part === "צד עורך" ? "bg-blue-500" : "bg-white"
         }`}
       >

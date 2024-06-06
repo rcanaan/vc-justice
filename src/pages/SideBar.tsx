@@ -5,19 +5,20 @@ import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import { ReactComponent as SideBarWave } from "../sideBar.svg";
 const SideBar: React.FC = () => {
   return (
-    <nav className="w-28 bg-gray-800 text-white h-full flex flex-col justify-between fixed right-0 top-0 bottom-0">
-      {/* <IsraelIcon /> */}
-      <div className="flex flex-col items-center mt-4 bg-gray-700 ">
-        {/* <IsraelIcon className="w-20 h-20" /> */}
+    <nav className="w-28 bg-gray-700 text-white h-full flex flex-col justify-between fixed right-0 top-0 bottom-0">
+      {/* <SideBarWave /> */}
+      <div>
+        <IsraelIcon className="h-28 w-28" />
       </div>
-      <div className="flex flex-col space-y-4 p-4 mt-20 mr-4 border-b border-r border-b-blue-300 border-r-blue-300 bg-gray-700">
+      <div className="flex flex-col space-y-4 p-2">
         <button className="flex flex-col items-center py-2 px-4  text-center">
           <PeopleAltOutlinedIcon />
           <span>אנשים</span>
         </button>
-        <button className="flex flex-col items-center py-2 px-4   text-center">
+        <button className="flex flex-col items-center py-2 px-4 text-center">
           <BalanceOutlinedIcon />
           <span>פרטי דיון</span>
         </button>

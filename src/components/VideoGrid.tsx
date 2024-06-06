@@ -30,7 +30,7 @@ const VideoGrid: React.FC = () => {
     (participant) => participant.role !== "judge"
   );
   return (
-    <div className="">
+    <div>
       {judge && (
         <div className="flex justify-center mb-[0.75rem]">
           <Participant
@@ -42,8 +42,7 @@ const VideoGrid: React.FC = () => {
           />
         </div>
       )}
-      <div className="flex flex-wrap gap-x-[0.75rem] gap-y-[0.75rem] xl:gap-y-[0.75rem] justify-center ">
-        {/* <div className="flex flex-wrap gap-x-[0.75rem] gap-y-[4.75rem] justify-center mt-16"> */}
+      <div className="flex flex-wrap gap-x-[0.75rem] gap-y-[0.75rem] xl:gap-y-[0.75rem] justify-center mr-16">
         {otherParticipants.map((participant, index) => (
           <Participant
             key={index}
