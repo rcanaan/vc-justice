@@ -2,8 +2,8 @@
 
 ## Overview
 VC Justice is a project for managing a judicial review committee for the justice department. 
-The application includes features like video conferencing, participant management, expanded screen to full size, participation with video camera..
- all by responsive design.
+The application includes features like video conferencing, participant management, expanded screen to full size and more features that will be added soon. 
+ all these features by the responsive design approaches.
 
  
 ![vc diagram](https://github.com/rcanaan/vc-justice/assets/58044154/9fed4b22-d4e7-42d6-8be0-a6380d5c996f)
