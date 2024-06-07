@@ -1,6 +1,6 @@
 import React from "react";
-import Participant from "./Participant";
-import { useVideo } from "./VideoContext";
+import Participant from "../components/Participant";
+import { useVideo } from "../context/VideoContext";
 
 export default function VideoGrid() {
   const { participants } = useVideo();

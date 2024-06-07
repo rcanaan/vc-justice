@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
-import { useVideo } from "./VideoContext";
-import { Participant } from "./VideoContext";
+import { useVideo } from "../context/VideoContext";
+import { Participant } from "../context/VideoContext";
 
 interface ParticipantProps extends Participant {}
 

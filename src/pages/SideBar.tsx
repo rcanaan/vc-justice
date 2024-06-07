@@ -3,7 +3,7 @@ import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import { useVideo } from "../components/VideoContext";
+import { useVideo } from "../context/VideoContext";
 
 export default function SideBar() {
   const { participants } = useVideo();

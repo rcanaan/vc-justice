@@ -3,7 +3,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 import PresentToAllOutlinedIcon from "@mui/icons-material/PresentToAllOutlined";
-import { useVideo } from "../components/VideoContext";
+import { useVideo } from "../context/VideoContext";
 export default function Footer() {
   const [meetingTime, setMeetingTime] = useState(0);
   const { toggleVideo, isCameraOn } = useVideo();
