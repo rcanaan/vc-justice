@@ -17,6 +17,8 @@ No need to download the code! You can watch it online as it is deployed on Verce
 
 https://vc-ministry-of-justice.vercel.app/
 
-## Packages Used
+## Technologies Used
+- React 
+- Type Script
 - `tailwindcss` - A utility-first CSS framework for rapidly building custom designs.
-- `material-ui` - A comprehensive suite of UI tools that provides ready-to-use components.
+- `material-ui` - A comprehensive suite of UI tools that provides ready-to-use components and icons.
