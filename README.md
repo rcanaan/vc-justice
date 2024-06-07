@@ -13,7 +13,7 @@ All these features by the responsive design approache.
 ## Live Demo
 No need to download the code! You can watch it online as it is deployed on Vercel:
 
-##Bonus Features 
+## Bonus Features 
 - Allowing the user to activate the camera during the meeting
 - expanding full-size screen
 - Updating number of participants on the SideBar
