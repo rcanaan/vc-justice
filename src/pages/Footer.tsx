@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   const handleVideoToggle = () => {
-    toggleVideo("צד עורך");
+    toggleVideo("צד עורר");
   };
 
   const handleShareButtonClick = () => {

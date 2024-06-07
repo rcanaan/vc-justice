@@ -59,13 +59,13 @@ export default function Participants({
       )}
       <div
         className={`absolute top-2.5 right-2.5 rounded-md ${
-          part === "צד עורך" ? "bg-blue-500" : "bg-white"
+          part === "צד עורר" ? "bg-blue-500" : "bg-white"
         }`}
       >
         <p className={`text-blue-900 font-[700] text-xs p-1.5 `}>
           {role === "judge"
             ? "דובר"
-            : part === "צד עורך"
+            : part === "צד עורר"
             ? `אני - ${part}`
             : part}
         </p>

@@ -41,7 +41,7 @@ export const VideoProvider: React.FC<{ children: ReactNode }> = ({
     {
       name: "קובי יעקובי",
       role: "lawyer",
-      part: "צד עורך",
+      part: "צד עורר",
       imgSrc: `${process.env.PUBLIC_URL}/images/lawyer.jpg`,
     },
   ];
