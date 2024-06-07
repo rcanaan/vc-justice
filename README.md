@@ -1,4 +1,4 @@
-#VC Justice Department 
+# VC Justice Department 
 
 ##Overview
 VC Justice is a project for managing a judicial review committee for the justice department. 
