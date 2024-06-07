@@ -8,7 +8,7 @@ All these features by the responsive design approache.
  
 ![vc diagram](https://github.com/rcanaan/vc-justice/assets/58044154/9fed4b22-d4e7-42d6-8be0-a6380d5c996f)
 
-The diagram above represents the main structure and hierarchy of the components in the project. 
+The diagram above represents the main structure and hierarchy of the components in the project, 
  based on the project guidelines. 
 
 
