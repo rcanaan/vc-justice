@@ -1,4 +1,3 @@
-import React from "react";
 import Participant from "../components/Participant";
 import { useVideo } from "../context/VideoContext";
 
