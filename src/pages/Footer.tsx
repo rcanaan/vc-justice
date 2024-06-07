@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
+import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 import PresentToAllOutlinedIcon from "@mui/icons-material/PresentToAllOutlined";
+import { useVideo } from "../components/VideoContext";
 export default function Footer() {
   const [meetingTime, setMeetingTime] = useState(0);
+  const { toggleVideo, isCameraOn } = useVideo();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -17,6 +20,10 @@ export default function Footer() {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+  };
+
+  const handleVideoToggle = () => {
+    toggleVideo("צד עורך");
   };
   return (
     <>
@@ -39,9 +46,22 @@ export default function Footer() {
             <span>מיקרופון</span>
             <KeyboardVoiceIcon />
           </button>
-          <button className="bg-gray-700 px-4 py-2  justify-center rounded-3xl flex space-x-2">
-            <span>מצלמה</span>
-            <VideocamIcon />
+          <button
+            onClick={handleVideoToggle}
+            className="bg-gray-700 px-4 py-2  justify-center rounded-3xl flex space-x-2"
+          >
+            {isCameraOn ? (
+              <>
+                <span>כבה מצלמה</span>
+                <VideocamOffIcon />
+              </>
+            ) : (
+              <>
+                <span>מצלמה</span>
+
+                <VideocamIcon />
+              </>
+            )}
           </button>
         </div>
       </footer>

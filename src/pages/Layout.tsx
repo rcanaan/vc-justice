@@ -14,7 +14,7 @@ const Layout: React.FC = () => {
       >
         <main
           className="flex-grow bg-gray-800 p-4"
-          style={{ marginRight: "8rem lg:10rem " }}
+          style={{ marginRight: "8rem lg:10rem ", paddingBottom: "7rem" }}
         >
           <Outlet />
         </main>

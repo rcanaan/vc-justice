@@ -19,8 +19,8 @@ const Header: React.FC = () => {
   }, []);
   return (
     <header
-      className="bg-gray-800 text-white p-4 flex sticky  justify-between items-center"
-      style={{ marginRight: "12rem" }}
+      className="bg-gray-800 text-white p-4 flex justify-between items-center "
+      style={{ marginRight: "8rem" }}
     >
       <div className="flex items-center space-x-4 w-1/3">
         <div className="flex flex-row items-center gap-1">

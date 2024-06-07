@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
+import { useVideo } from "./VideoContext";
 
 interface ParticipantProps {
   name: string;
@@ -7,6 +8,7 @@ interface ParticipantProps {
   part: string;
   imgSrc: string;
   isJudge?: boolean;
+  isVideo?: boolean;
 }
 
 const Participant: React.FC<ParticipantProps> = ({
@@ -15,27 +17,60 @@ const Participant: React.FC<ParticipantProps> = ({
   part,
   imgSrc,
   isJudge = false,
+  isVideo,
 }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const { videoEnabledForPart } = useVideo();
+  useEffect(() => {
+    if (videoEnabledForPart === part && videoRef.current) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          if (videoRef.current) {
+            videoRef.current.srcObject = stream;
+          }
+        })
+        .catch((error) => {
+          console.error("Error accessing the camera", error);
+        });
+    }
+  }, [videoEnabledForPart, part]);
   return (
     <div
-      className={`relative flex flex-col items-center h-56 lg:min-h-64  ${
-        !isJudge
-          ? "w-[18rem] lg:min-w-[25.5rem] xl:min-w-[29rem] 2xl:min-w-[40rem] 2xl:min-h-96"
-          : " w-full"
+      className={`relative flex flex-col items-center ${
+        role === "judge"
+          ? "h-60 w-[25rem] lg:min-w-[30rem] lg:min-h-[12rem] xl:min-w-[25rem]  2xl:min-w-[45rem] 2xl:min-h-[24rem]"
+          : "w-[18rem] lg:min-w-[25.5rem] xl:min-h-[12rem] xl:min-w-[25rem] 2xl:min-w-[40rem] 2xl:min-h-[20rem]"
       }  `}
     >
-      <img
-        src={imgSrc}
-        alt={name}
-        className="h-56 lg:min-h-64 lg:min-w-[25.5rem] xl:min-w-[29rem] 2xl:min-w-[40rem] 2xl:min-h-96 object-cover rounded-lg"
-      />
+      {videoEnabledForPart === part ? (
+        <video
+          ref={videoRef}
+          className="h-56 xl:min-h-[12rem] lg:min-w-[25.5rem] xl:min-w-[25rem] 2xl:min-w-[40rem] 2xl:min-h-[20rem] object-cover rounded-lg"
+          autoPlay
+        />
+      ) : (
+        <img
+          src={imgSrc}
+          alt={name}
+          className={`object-cover rounded-lg ${
+            role === "judge"
+              ? "h-60 w-[25rem] lg:min-w-[30rem] lg:min-h-[12rem] xl:min-w-[25rem] 2xl:min-w-[45rem] 2xl:min-h-[24rem] "
+              : "h-56 xl:min-h-[12rem] lg:min-w-[25.5rem] xl:min-w-[25rem] 2xl:min-w-[40rem] 2xl:min-h-[20rem]"
+          }`}
+        />
+      )}
       <div
         className={`absolute top-2.5 right-2.5 rounded-md ${
           part === "צד עורך" ? "bg-blue-500" : "bg-white"
         }`}
       >
         <p className={`text-blue-900 font-[700] text-xs p-1.5 `}>
-          {role === "judge" ? "דובר" : part}
+          {role === "judge"
+            ? "דובר"
+            : part === "צד עורך"
+            ? `אני - ${part}`
+            : part}
         </p>
       </div>
       <div className="flex justify-between items-center absolute bottom-0 w-full bg-gray-800 bg-opacity-80 py-1.5 px-3.5 ">

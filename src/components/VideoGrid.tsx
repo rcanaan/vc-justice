@@ -1,34 +1,17 @@
 import React from "react";
 import Participant from "./Participant";
-
-const participants = [
-  {
-    name: "כבוד השופטת ישראלה ישראלוף",
-    role: "judge",
-    part: "ועדת ערר לענייני קורונה",
-    imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
-  },
-  {
-    name: "שושנה שושני",
-    role: "lawyer",
-    part: "צד משיב",
-    imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
-  },
-  {
-    name: "קובי יעקובי",
-    role: "lawyer",
-    part: "צד עורך",
-    imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
-  },
-];
+import { useVideo } from "./VideoContext";
 
 const VideoGrid: React.FC = () => {
+  const { participants } = useVideo();
+
   const judge = participants.find(
     (participant) => participant.role === "judge"
   );
   const otherParticipants = participants.filter(
     (participant) => participant.role !== "judge"
   );
+
   return (
     <div>
       {judge && (
@@ -39,6 +22,7 @@ const VideoGrid: React.FC = () => {
             role={judge.role}
             part={judge.part}
             imgSrc={judge.imgSrc}
+            isVideo={true}
           />
         </div>
       )}
@@ -56,5 +40,4 @@ const VideoGrid: React.FC = () => {
     </div>
   );
 };
-
 export default VideoGrid;
