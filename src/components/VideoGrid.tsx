@@ -2,7 +2,7 @@ import React from "react";
 import Participant from "./Participant";
 import { useVideo } from "./VideoContext";
 
-const VideoGrid: React.FC = () => {
+export default function VideoGrid() {
   const { participants } = useVideo();
 
   const judge = participants.find(
@@ -22,7 +22,6 @@ const VideoGrid: React.FC = () => {
             role={judge.role}
             part={judge.part}
             imgSrc={judge.imgSrc}
-            isVideo={true}
           />
         </div>
       )}
@@ -39,5 +38,4 @@ const VideoGrid: React.FC = () => {
       </div>
     </div>
   );
-};
-export default VideoGrid;
+}

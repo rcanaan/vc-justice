@@ -1,10 +1,9 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import NavBar from "./SideBar";
 
-const Layout: React.FC = () => {
+export default function Layout() {
   return (
     <div className="flex flex-col h-screen bg-gray-800">
       <Header />
@@ -23,6 +22,4 @@ const Layout: React.FC = () => {
       <NavBar />
     </div>
   );
-};
-
-export default Layout;
+}

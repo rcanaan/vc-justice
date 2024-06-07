@@ -1,7 +1,6 @@
-// VideoContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-interface Participant {
+export interface Participant {
   name: string;
   role: string;
   part: string;
@@ -30,20 +29,20 @@ export const VideoProvider: React.FC<{ children: ReactNode }> = ({
       name: "כבוד השופטת ישראלה ישראלוף",
       role: "judge",
       part: "ועדת ערר לענייני קורונה",
-      imgSrc: `${process.env.PUBLIC_URL}/judge2.webp`,
+      imgSrc: `${process.env.PUBLIC_URL}/images/judge2.webp`,
     },
     {
       name: "שושנה שושני",
       role: "lawyer",
       part: "צד משיב",
-      imgSrc: `${process.env.PUBLIC_URL}/female_lawyer.webp`,
+      imgSrc: `${process.env.PUBLIC_URL}/images/female_lawyer.webp`,
     },
 
     {
       name: "קובי יעקובי",
       role: "lawyer",
       part: "צד עורך",
-      imgSrc: `${process.env.PUBLIC_URL}/lawyer.jpg `,
+      imgSrc: `${process.env.PUBLIC_URL}/images/lawyer.jpg`,
     },
   ];
 

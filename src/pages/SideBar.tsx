@@ -1,21 +1,22 @@
-// SideBar.tsx
 import React from "react";
-import { ReactComponent as IsraelIcon } from "../IsraelIcon.svg";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import { useVideo } from "../components/VideoContext";
 
-const SideBar: React.FC = () => {
+export default function SideBar() {
   const { participants } = useVideo();
 
   return (
     <nav className="w-28 bg-gray-700 text-white h-full flex flex-col justify-between fixed right-0 top-0 bottom-0">
-      {/* <SideBarWave /> */}
-      <div>
-        <IsraelIcon className="h-28 w-28" />
-      </div>
+      <img
+        src={`${process.env.PUBLIC_URL}/icons/IsraelIcon.svg`}
+        alt="Israel Icon"
+        className="h-28 w-28"
+      />
+
+      {/* in here supposes to be an svg - for the blue light wave */}
       <div className="flex flex-col space-y-4 p-2">
         <button className="relative flex flex-col items-center py-2 px-4 text-center">
           <PeopleAltOutlinedIcon />
@@ -47,6 +48,4 @@ const SideBar: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default SideBar;
+}

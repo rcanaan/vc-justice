@@ -1,24 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import { useVideo } from "./VideoContext";
+import { Participant } from "./VideoContext";
 
-interface ParticipantProps {
-  name: string;
-  role: string;
-  part: string;
-  imgSrc: string;
-  isJudge?: boolean;
-  isVideo?: boolean;
-}
+interface ParticipantProps extends Participant {}
 
-const Participant: React.FC<ParticipantProps> = ({
+export default function Participants({
   name,
   role,
   part,
   imgSrc,
-  isJudge = false,
-  isVideo,
-}) => {
+}: ParticipantProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { videoEnabledForPart } = useVideo();
   useEffect(() => {
@@ -84,6 +76,4 @@ const Participant: React.FC<ParticipantProps> = ({
       </div>
     </div>
   );
-};
-
-export default Participant;
+}

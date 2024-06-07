@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiMaximize } from "react-icons/fi";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
-const Header: React.FC = () => {
+export default function Header() {
   const [headTitle, setHeadTitle] = useState<string>(
     "משרד המשפטים, ועדת ערר לענייני קורונה - השתתפות בהוצאות קבועות"
   );
@@ -40,6 +40,4 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}
