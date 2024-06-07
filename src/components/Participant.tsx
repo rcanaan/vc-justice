@@ -13,6 +13,7 @@ export default function Participants({
 }: ParticipantProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { videoEnabledForPart } = useVideo();
+
   useEffect(() => {
     if (videoEnabledForPart === part && videoRef.current) {
       navigator.mediaDevices
@@ -27,6 +28,10 @@ export default function Participants({
         });
     }
   }, [videoEnabledForPart, part]);
+
+  const handleMicrophoneButtonClick = () => {
+    console.log("Microphone button clicked");
+  };
   return (
     <div
       className={`relative flex flex-col items-center ${
@@ -66,9 +71,9 @@ export default function Participants({
         </p>
       </div>
       <div className="flex justify-between items-center absolute bottom-0 w-full bg-gray-800 bg-opacity-80 py-1.5 px-3.5 ">
-        <div className="text-white">
+        <button onClick={handleMicrophoneButtonClick} className="text-white">
           <KeyboardVoiceIcon style={{ fontSize: "22px" }} />
-        </div>
+        </button>
         <div className="flex flex-col text-right right-0">
           <p className="text-sm text-cyan-600 font-bold">{part}</p>
           <p className="text-xs font-medium text-gray-300">{name}</p>

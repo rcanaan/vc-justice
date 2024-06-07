@@ -25,6 +25,14 @@ export default function Footer() {
   const handleVideoToggle = () => {
     toggleVideo("צד עורך");
   };
+
+  const handleShareButtonClick = () => {
+    console.log("Share button clicked");
+  };
+
+  const handleMicrophoneButtonClick = () => {
+    console.log("Microphone button clicked");
+  };
   return (
     <>
       <footer
@@ -32,17 +40,21 @@ export default function Footer() {
         style={{ marginRight: "12rem" }}
       >
         <div className="flex items-center space-x-2 w-1/3">
-          <button className="bg-red-400 px-4 py-2 rounded font-semibold">
-            LIVE
-          </button>
+          <div className="bg-red-400 px-4 py-2 rounded font-semibold">LIVE</div>
           <span> {formatTime(meetingTime)}</span>
         </div>
         <div className="flex items-center justify-center space-x-4 w-1/3">
-          <button className="bg-gray-700 px-4 py-2 rounded-3xl flex space-x-2 justify-center">
+          <button
+            onClick={handleShareButtonClick}
+            className="bg-gray-700 px-4 py-2 rounded-3xl flex space-x-2 justify-center"
+          >
             <span>שיתוף</span>
             <PresentToAllOutlinedIcon />
           </button>
-          <button className="bg-gray-700 px-4 py-2 rounded-3xl flex space-x-2 justify-center">
+          <button
+            onClick={handleMicrophoneButtonClick}
+            className="bg-gray-700 px-4 py-2 rounded-3xl flex space-x-2 justify-center"
+          >
             <span>מיקרופון</span>
             <KeyboardVoiceIcon />
           </button>
