@@ -21,8 +21,8 @@ https://vc-ministry-of-justice.vercel.app/
 
 ## Bonus Features 
 - Allowing the user to activate the camera during the meeting
-- expanding full-size screen
-- Updating number of participants on the SideBar
+- Expanding full-size screen
+- Updating automatically the number of participants on the SideBar
 - Adjustable VideoGrid (component) for multiple participants
 
 
